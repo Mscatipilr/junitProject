@@ -39,6 +39,8 @@ class BookServiceTest {
     void testSearchBook_PartialMatch() {
         List<Book> books = bookService.searchBook("George");
         assertFalse(books.isEmpty(), "Search should return books with matching author names.");
+        assertEquals("1984", books.get(0).getTitle(), "The book title should be '1984'.");
+        assertEquals("George Orwell", books.get(0).getAuthor(), "The author should be 'George Orwell'.");
     }
 
     @Test
